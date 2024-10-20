@@ -1,4 +1,4 @@
-% Group members: Sam Somavarapu, Roshan Sharma, Rabiat Gira
+% Group members: Sam Somavarapu, Roshan Sharma, Rabiat Giram
 % Parameters
 years = 5; % Number of years
 seasons = {'Winter', 'Spring', 'Summer', 'Fall'}; % Season names
