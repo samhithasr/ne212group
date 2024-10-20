@@ -35,6 +35,9 @@ end
 
 % Calculate average temperatures for each month and year
 for year = 1:years
+    if (year == 4)
+        daysInMonth(2) = 29;
+    end
     for i = 1:numMonths
         avgTemp(year, i) = mean(months(i, 1:daysInMonth(i), year), 'omitnan');
     end
