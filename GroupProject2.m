@@ -121,3 +121,44 @@ grid on; % Show grid for better visualization
 figure; % Create a new figure
 hist(zScores, 'Normalization', 'pdf'); % Normalize to probability density function
 
+
+
+% randn z score
+
+% normalize data
+normalizedRandnData = (randnData - mean(randnData)) / std(randnData);
+
+% 2x2 subplot with histograms
+figure;
+subplot(2,2,1);
+% small bins
+histogram(normalizedRandnData, 5);
+title('Histogram with 5 Bins');
+xlabel('Normalized Data');
+ylabel('Frequency');
+grid on;
+
+% medium bins
+subplot(2,2,2);
+histogram(normalizedRandnData, 10);
+title('Histogram with 10 Bins');
+xlabel('Normalized Data');
+ylabel('Frequency');
+grid on;
+
+% bigger bin size
+subplot(2,2,3);
+histogram(normalizedRandnData, 20);
+title('Histogram with 20 Bins');
+xlabel('Normalized Data');
+ylabel('Frequency');
+grid on;
+
+% giant bin size
+subplot(2,2,4);
+histogram(normalizedRandnData, 50);
+title('Histogram with 50 Bins');
+xlabel('Normalized Data');
+ylabel('Frequency');
+grid on;
+
