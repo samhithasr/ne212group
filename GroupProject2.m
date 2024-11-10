@@ -39,7 +39,7 @@ end
 % rand
 figure;
 scatter(1:50, randData, 'filled');
-title('Uniformly Distributed Random Data');
+title('Uniformly Distributed Random Data (rand)');
 xlabel('Index');
 ylabel('Value');
 grid on;
@@ -47,7 +47,7 @@ grid on;
 % randn
 figure;
 bar(randnData);
-title('Normally Distributed Random Data');
+title('Normally Distributed Random Data (randn)');
 xlabel('Index');
 ylabel('Value');
 grid on;
