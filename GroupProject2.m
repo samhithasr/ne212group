@@ -75,7 +75,46 @@ soxIQR = iqr(scores(:,1));
 %% PART FIVE: ZSCORE
 
 % rand
+%dataset = [0.7011, 0.6663, 0.5391, 0.6981, 0.6665, 0.1781, 0.1280, 0.9991, ...
+        0.1711, 0.0326, 0.5612, 0.8819, 0.6692, 0.1904, 0.3689, 0.4607, ...
+        0.9816, 0.1564, 0.8555, 0.6448, 0.3763, 0.1909, 0.4283, 0.4820, ...
+        0.1206, 0.5895, 0.2262, 0.3846, 0.5830, 0.2518, 0.2904, 0.6171, ...
+        0.2653, 0.8244, 0.9827, 0.7302, 0.3439, 0.5841, 0.1078, 0.9063, ...
+        0.8797, 0.8178, 0.2607, 0.5944, 0.0225, 0.4253, 0.3127, 0.1615, ...
+        0.1788, 0.4229];
 
+% Calculate Z-scores using the vectorized function
+zScores = zscore(data);
+
+% Create a figure
+figure;
+
+% First subplot for the histogram of Z-scores
+subplot(2, 1, 1); % 2 rows, 1 column, first subplot
+hist(zScores, 'Normalization', 'pdf'); % Normalize to probability density function
+xlabel('Z-score'); % Label for x-axis
+ylabel('Probability Density'); % Label for y-axis
+title('Histogram of Z-scores'); % Title for the first subplot
+grid on; % Show grid for better visualization
+
+% Second subplot for the histogram of the original data
+subplot(2, 1, 2); % 2 rows, 1 column, second subplot
+hist(data, 'Normalization', 'pdf'); % Normalize to probability density function
+xlabel('Value'); % Label for x-axis
+ylabel('Probability Density'); % Label for y-axis
+title('Histogram of Original Data'); % Title for the second subplot
+grid on; % Show grid for better visualization
+% Create a histogram of Z-scores
+figure; % Create a new figure
+hist(zScores, 'Normalization', 'pdf'); % Normalize to probability density function
+
+
+
+
+
+% Display the Z-scores
+disp('Z-scores:');
+disp(zScores);
 % randn
 
 % normalized THIRD data
@@ -86,7 +125,7 @@ zscoreSox = zscore(scores(:,1));
 % rand
 randData = rand(1, 50); 50 random values between 0 and 1
 figure; 
-histogram(randData, 'Normalization,' 'pdf'); %Normalize the histogram to probability density function
+hist(randData, 'Normalization,' 'pdf'); %Normalize the histogram to probability density function
 xlabel('Value'); %Label for x-axis
 ylabel('Normalized frequency'); Label for y-axis
 title('Normalized histogram of random data'); %Title for graph
