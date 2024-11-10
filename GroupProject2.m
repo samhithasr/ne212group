@@ -83,7 +83,30 @@ vectorizedSox = (scores(:, 1) - soxMean)/soxSTDDEV;
 zscoreSox = zscore(scores(:,1));
 
 %% PART SIX: NORMALIZED PLOTS
-% To do: answer what changing bin sizes does to these plots, as per the
+% rand
+randData = rand(1, 50); 50 random values between 0 and 1
+figure; 
+histogram(randData, 'Normalization,' 'pdf'); %Normalize the histogram to probability density function
+xlabel('Value'); %Label for x-axis
+ylabel('Normalized frequency'); Label for y-axis
+title('Normalized histogram of random data'); %Title for graph
+
+% Data
+categories = {'Wins', 'Losses'};
+normalized_counts = [0.537, 0.463];
+
+% Create a bar graph
+figure; % Create a new figure
+bar(normalized_counts);
+
+% Customize the graph
+set(gca, 'XTickLabel', categories); % Set x-axis labels
+ylabel('Normalized Count'); % Label for y-axis
+title('Win/Loss Record Normalized Histogram'); % Title for the graph
+ylim([0 1]); % Set y-axis limits from 0 to 1 for normalization
+
+% Show grid for better visualization
+grid on;% To do: answer what changing bin sizes does to these plots, as per the
 % second part of question 6.
 
 % rand
