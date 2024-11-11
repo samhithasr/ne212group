@@ -37,6 +37,7 @@ end
 % plots here
 
 % rand
+% scatter plot to show each value at corresponding index in the array
 scatter(1:50, randData, 'filled');
 title('Uniformly Distributed Random Data (rand)');
 xlabel('Index');
@@ -45,6 +46,8 @@ grid on;
 
 % randn
 figure;
+% bar plot to show value at each index in array, bar allows easier visual
+% comparison
 bar(randnData);
 title('Normally Distributed Random Data (randn)');
 xlabel('Index');
@@ -65,6 +68,9 @@ grid on;
 
 %% PART FOUR: MEAN, MEDIAN, STD DEV, IQR
 % statistical analysis commands
+% mean() for mean, median() for median
+% std() for standard deviation
+% iqr for interquartile range
 
 % randData section
 randMean = mean(randData);
@@ -99,8 +105,12 @@ vectorizedSox = (scores(:, 1) - soxMean)/soxSTDDEV;
 zscoreSox = zscore(scores(:,1));
 
 %% PART SIX: NORMALIZED PLOTS
-% To do: answer what changing bin sizes does to these plots, as per the
-% second part of question 6.
+% Adjusting bin sizes in histograms changes how detailed the data appears.
+% Fewer bins makes more broad categories and a more smooth distribution but 
+% shows less specific info. More bins add detail, showing smaller 
+% variations but also showing more variability, making it harder to
+% interpret from just looking at it. 
+
 
 % rand
 figure;
@@ -196,10 +206,20 @@ xlabel('Z-Scores');
 sgtitle('Z-Score Histograms for Red Sox Scores with N Bins')
 
 %% PART SEVEN: RAND VS RANDN
-% To do: after finishing 2-6 for rand and randn, answer here in comments 
-% what the key differences between rand and randn are, plus what they 
-% mean in terms of the functions we called to produce the data (mean,
-% median, zscore, etc.)
+
+% The `rand` dataset spreads evenly across the bins, making it look flat 
+% because it generates data from a uniform distribution, where all values 
+% are equally likely. This means the mean and median for `rand` are similar, 
+% and the z-scores are evenly distributed without any noticeable grouping.
+%
+% The `randn` dataset forms a bell curve, with most values near the center, 
+% since it generates data from a normal distribution that has more values 
+% around the mean. For `randn`, the mean and median are almost identical, 
+% showing the symmetry of the normal distribution. The z-scores show 
+% tight clustering near zero, showoing the high concentration of values
+% near the mean. Adding more bins displays the even pattern of `rand` 
+% and the bigger peak near the mean in `randn`
+
 
 % To do: publish to PDF
 
